@@ -9,7 +9,7 @@ public class Logger{
     //Methods
     public void log(String type, String errorMessage){
         Date currentDate = new Date();
-        SimpleDateFormat dateFormat = new SimpleDateFormat("MM.dd @ hh:mm:ss");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MM.dd @ T");
 
         System.out.println(dateFormat.format(currentDate) + "\t" + type + "\t" + errorMessage);
     }
