@@ -11,7 +11,6 @@ public class Main{
 
         switch(menuOptions){
             case 1: System.out.println("First case: Show the best probability!");
-                    history.loadData();
                     break;
             case 2: System.out.println("Second case: Generate data");
                     break;
