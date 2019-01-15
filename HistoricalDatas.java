@@ -8,7 +8,7 @@ import java.io.IOException;
 public class HistoricalDatas{
     
     public void generateData(){
-        try{    
+        try{
         String[] placementStrings = {"1", "2", "3", "4"};
         PrintWriter pw = new PrintWriter(new File("HistoricalData.csv"));
         StringBuilder sb = new StringBuilder();
