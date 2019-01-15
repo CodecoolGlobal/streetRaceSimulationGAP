@@ -9,14 +9,12 @@ public class Main{
         scanner.nextLine();
         HistoricalDatas history = new HistoricalDatas();
         Race race = new Race();
-
         switch(menuOptions){
             case 1: System.out.println("First case: Show the best probability!");
-                    System.out.println(race.car1.getPerformance());
+                    
                     break;
             case 2: System.out.println("Second case: Generate data");
                     break;
         }
     }
-
 }
