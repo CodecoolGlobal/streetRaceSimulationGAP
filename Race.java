@@ -1,4 +1,4 @@
 public class Race{
     
-    Car car1 = new Car(name, performance, driverSkill, isCrashed);
+    Car car1 = new Car("Porsche 911", 500, 10, false);
 }
