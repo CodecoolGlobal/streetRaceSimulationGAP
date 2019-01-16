@@ -72,24 +72,29 @@ public class HistoricalDatas{
         String csvFile = "HistoricalData.csv";
         String line = "";
         String cvsSplitBy = ",";
+        String[] historicalData = {""};
 
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
 
             while ((line = br.readLine()) != null) {
 
                 // use comma as separator
-                String[] historicalData = line.split(cvsSplitBy);
-
-                for(int i = 0; i<historicalData.length; i++){
-                    System.out.println(historicalData[i]);
-                }
+                historicalData = line.split(cvsSplitBy);
 
             }
-
+            
         } catch (IOException e) {
             e.printStackTrace();
         }
         return historicalData;
+    }
+
+    public void printOneRound(){
+        System.out.println(race.car1.toString());
+        System.out.println(race.car2.toString());
+        System.out.println(race.car3.toString());
+        System.out.println(race.car4.toString());
+        System.out.println(race.car5.toString());
     }
 
 }

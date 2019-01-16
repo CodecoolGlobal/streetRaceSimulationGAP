@@ -54,7 +54,7 @@ public class Car{
 
     @Override
     public String toString(){
-        return "Type: " + this.getName() + " Performance: " + this.getPerformance() +
-        " Driving Skill: " + this.getDriverSkill() + " Is Crashed?: " + this.getIsCrashed() + " Overall: " + this.getOverall();
+        return "Type: " + this.getName() + "    Performance: " + this.getPerformance() +
+        "    Driving Skill: " + this.getDriverSkill() + "   Is Crashed?: " + this.getIsCrashed() + "    Overall: " + this.getOverall();
     }
 }   
