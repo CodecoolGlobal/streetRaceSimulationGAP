@@ -4,22 +4,28 @@ import java.io.PrintWriter;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class HistoricalDatas{
+    Race race = new Race();
     
-    public void generateData(){
-        try{
-        String[] placementStrings = {"1", "2", "3", "4"};
-        PrintWriter pw = new PrintWriter(new File("HistoricalData.csv"));
-        StringBuilder sb = new StringBuilder();
-        for(int i = 0; i<placementStrings.length; i++){
-            sb.append(placementStrings[i]);
-        }
-        pw.write(sb.toString());
-        pw.close();
-        }catch(FileNotFoundException e){
-            System.out.println("File not found");
-        }
+    public String[] generateData(){
+        int[] intArray = {(int)race.car1.getOverall(),(int)race.car2.getOverall(),(int)race.car3.getOverall(),
+            (int)race.car4.getOverall(),(int)race.car5.getOverall()};
+        Arrays.sort(intArray);
+        
+        String[] stringArray = (String)intArray;
+        
+        return intArray;
+
+        //PrintWriter pw = new PrintWriter(new File("HistoricalData.csv"));
+        //StringBuilder sb = new StringBuilder();
+       // for(int i = 0; i<placementStrings.length; i++){
+         //   sb.append(placementStrings[i]);
+       // }
+      //  pw.write(sb.toString());
+       // pw.close();
+        
     }
 
     public void loadData(){
@@ -45,4 +51,5 @@ public class HistoricalDatas{
         }
 
     }
+
 }
