@@ -11,12 +11,13 @@ public class Main{
         Race race = new Race();
         switch(menuOptions){
             case 1: System.out.println("First case: Show the best probability!");
-                    System.out.println(race.car1.toString());
-                    System.out.println(race.car2.toString());
-                    System.out.println(race.car3.toString());
-                    System.out.println(race.car4.toString());
-                    System.out.println(race.car5.toString());
+                    System.out.println(history.race.car1.toString());
+                    System.out.println(history.race.car2.toString());
+                    System.out.println(history.race.car3.toString());
+                    System.out.println(history.race.car4.toString());
+                    System.out.println(history.race.car5.toString());
                     System.out.println(history.generateData());
+                    System.out.println(history.saveData(21));
                     break;
             case 2: System.out.println("Second case: Generate data");
                     break;
