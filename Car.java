@@ -40,4 +40,9 @@ public class Car{
     public void setIsCrashed(boolean isCrashed){
         this.isCrashed = isCrashed;
     }
+    @Override
+    public String toString(){
+        return "Type: " + this.getName() + " Performance: " + this.getPerformance() +
+        " Driving Skill: " + this.getDriverSkill() + " Is Crashed?: " + this.getIsCrashed();
+    }
 }   

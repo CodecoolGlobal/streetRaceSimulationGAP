@@ -3,7 +3,7 @@ import java.util.Random;
 public class Race{
     
     Random rand = new Random();
-    Result result = new Result(1, "Porsche");
+    Result result = new Result();
 
     Car car1 = new Car("Porsche 911", rand.nextInt(50) + 1, rand.nextInt(10) + 1, false);
     Car car2 = new Car("BMW M5",rand.nextInt(50) + 1, rand.nextInt(10) + 1, false);
@@ -11,6 +11,7 @@ public class Race{
     Car car4 = new Car("Volga",rand.nextInt(50) + 1, rand.nextInt(10) + 1, false);
     Car car5 = new Car("Suzuki Swift Sport",rand.nextInt(50) + 1, rand.nextInt(10) + 1, false);
     
+
     
     {
     if(car1.getPerformance() >= 40 && car1.chanceToCrash() > 80){
