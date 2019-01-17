@@ -95,19 +95,29 @@ public class HistoricalDatas{
         System.out.println(race.car4.toString());
         System.out.println(race.car5.toString());
     }
-    /*public int[] saveStatistics(){
-        HashMap winMap = stats.winStatistics();
-        int[] intArray = {rowCounter("HistoricalData.csv"),(int)winMap.get("Porsche 911"),(int)winMap.get("BMW M5"),
-        (int)winMap.get("Aston Martin DB 11"),(int)winMap.get("Volga"),(int)winMap.get("Suzuki Swift Sport")};
-        try{
-            FileWriter filew = new FileWriter("Statistics.csv", true);
-            BufferedWriter buffw = new BufferedWriter(filew);
-            PrintWriter out = new PrintWriter(buffw);
-
-            out.println(intArray);
+    
+    public void saveMoney(double yourMoney){
+        try(FileWriter fw = new FileWriter("yourMoney.csv");
+            BufferedWriter bw = new BufferedWriter(fw);
+            PrintWriter out = new PrintWriter(bw))
+        {
+            out.println(yourMoney);
         } catch (IOException e) {
             //exception handling left as an exercise for the reader
         }
-        return intArray;
-     }*/
+    }
+
+    public double loadMoney(String fileName) {
+        int i = rowCounter(fileName);
+        String csvFile = fileName;
+        String[] dataArray = new String[i];
+        
+        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
+            String line = br.readLine();
+            return Double.parseDouble(line);
+        } catch (Exception e) {
+
+        }
+        return 0.0;
+    }
 }
