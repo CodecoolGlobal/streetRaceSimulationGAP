@@ -6,7 +6,7 @@ public class Statistics{
     String[] loaded = history.loadData("HistoricalData.csv");
     int runCounter = loaded.length;
 
-    public HashMap winStatistics(){
+    public HashMap<String,Integer> winStatistics(){
         HashMap<String,Integer> winingMap = new HashMap<String,Integer>();
         winingMap.put("Porsche 911",0);
         winingMap.put("BMW M5",0);
@@ -19,6 +19,6 @@ public class Statistics{
             }
         }
         return winingMap;
-    }
+    } 
 }
     

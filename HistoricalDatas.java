@@ -95,5 +95,19 @@ public class HistoricalDatas{
         System.out.println(race.car4.toString());
         System.out.println(race.car5.toString());
     }
-    
+    /*public int[] saveStatistics(){
+        HashMap winMap = stats.winStatistics();
+        int[] intArray = {rowCounter("HistoricalData.csv"),(int)winMap.get("Porsche 911"),(int)winMap.get("BMW M5"),
+        (int)winMap.get("Aston Martin DB 11"),(int)winMap.get("Volga"),(int)winMap.get("Suzuki Swift Sport")};
+        try{
+            FileWriter filew = new FileWriter("Statistics.csv", true);
+            BufferedWriter buffw = new BufferedWriter(filew);
+            PrintWriter out = new PrintWriter(buffw);
+
+            out.println(intArray);
+        } catch (IOException e) {
+            //exception handling left as an exercise for the reader
+        }
+        return intArray;
+     }*/
 }
