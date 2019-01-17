@@ -12,15 +12,15 @@ public class Betting{
     private String bettedCar;
 
     public void makeBet(double yourMoney){
-        System.out.println("You have " + yourMoney + "$ to bet! Choose the car you want to bet on, then the amount you want to bet with!");
+        System.out.println("\nYou have " + yourMoney + "$ to bet! Choose the car you want to bet on, then the amount you want to bet with!");
         System.out.println(race.car1.getName() + "             Odds: " + race.car1.getOdds());
         System.out.println(race.car2.getName() + "                  Odds: " + race.car2.getOdds());
         System.out.println(race.car3.getName() + "      Odds: " + race.car3.getOdds());
         System.out.println(race.car4.getName() + "                   Odds: " + race.car4.getOdds());
         System.out.println(race.car5.getName() + "      Odds: " + race.car5.getOdds());
-        System.out.println("Type the car, you'd like to bet on: ");
+        System.out.print("\nType the car, you'd like to bet on: ");
         bettedCar = scanner.nextLine();
-        System.out.println("Type the amount, you'd like to bet: ");
+        System.out.print("\nType the amount, you'd like to bet: ");
         bettedAmount = scanner.nextDouble();
         scanner.nextLine();
         yourMoney = history.loadMoney("yourMoney.csv");
@@ -31,13 +31,13 @@ public class Betting{
                 yourMoney += wonAmount;
                 race.printOneRound();
                 getFirstPlaceForBet().getFirst();
-                System.out.println("You won! The amount of money you have now is: " + yourMoney);
+                System.out.println("\nYou won! The amount of money you have now is: " + yourMoney);
                 history.saveMoney(yourMoney);
             }else{
                 yourMoney -= bettedAmount;
                 race.printOneRound();
                 getFirstPlaceForBet().getFirst();
-                System.out.println("You lost! The amount of money you have now is: " + yourMoney);
+                System.out.println("\nYou lost! The amount of money you have now is: " + yourMoney);
                 history.saveMoney(yourMoney);
             }
         }else{
