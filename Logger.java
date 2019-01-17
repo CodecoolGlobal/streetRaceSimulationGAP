@@ -42,12 +42,15 @@ public class Logger{
     }
 
     public void menu(){
+
         System.out.println("\n\t0. Quit");
-        System.out.println("\t1. Generate n rounds of the race!");
-        System.out.println("\t2. Show one round of the race!");
-        System.out.println("\t3. Show statistics!");
-        System.out.println("\t4. Betting and generating the race!");
-        
+        System.out.println("    1. Generate n rounds of the race!");
+        System.out.println("    2. Show one round of the race!");
+        System.out.println("    3. Show statistics!");
+        System.out.println("    4. Betting and generating the race!");
+        System.out.println("    5. Redeem a free coupon worth of 500$!");
+        System.out.println("    6. Print out the money I have left!");
+    
 
         boolean notQuit = true;
         while (notQuit){
@@ -75,8 +78,14 @@ public class Logger{
                         //Printing useful stats!
                         break;
                 case 4: System.out.println("Betting and generating the race:");
-                        betting.makeBet(1000);
+                        double money = betting.history.loadMoney("yourMoney.csv");
+                        betting.makeBet(money);
                         break;
+                case 5: System.out.println("Redeeming free coupon worth of 500$");
+                        double mani = betting.history.loadMoney("yourMoney.csv");
+                        betting.freeMoney(mani);
+                case 6: double gettingMoney = betting.history.loadMoney("yourMoney.csv");
+                        System.out.println("The amount of money you have now: " + gettingMoney);
             }
         }
     }
