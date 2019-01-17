@@ -1,5 +1,8 @@
 import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Arrays;
 import java.util.Date;
+
 
 public class Main{
     
@@ -16,6 +19,8 @@ public class Main{
         int rounds;
         HistoricalDatas history = new HistoricalDatas();
         Logger log = new Logger();
+        Statistics win = new Statistics();
+        Race race = new Race();
 
         
         switch(menuOptions){
@@ -35,11 +40,15 @@ public class Main{
                     String oneRoundWinner = history.getFirstPlace();
                     System.out.println("\nThe winner of this round is: " + oneRoundWinner);
                     break;
-            case 3: System.out.println("Showing statistics!");
+            case 3: System.err.println("Showing statistics!");
+                    HashMap winMap = win.winStatistics();
+                    System.out.println(win.winStatistics());
+                    //System.out.println((Arrays.toString(history.rowCounter("HistoricalData.csv"))));
                     //Printing useful stats!
+                    break;
             case 4: System.out.println("Betting and generating the race:");
                     betting.makeBet(1000);
+                    break;
         }
-    }
-    
+    }   
 }

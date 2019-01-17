@@ -1,15 +1,11 @@
-import java.io.File;
+import java.io.*;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.io.Writer;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Arrays;
-import java.io.FileWriter;
-import java.lang.Object;
-import java.io.BufferedWriter;
-import java.io.FileReader;
+import java.util.*;
 
 
 public class HistoricalDatas{
@@ -49,7 +45,6 @@ public class HistoricalDatas{
             BufferedWriter bw = new BufferedWriter(fw);
             PrintWriter out = new PrintWriter(bw))
         {
-            //out.println(intArray[4]);
             out.println(getFirstPlace());
         } catch (IOException e) {
             //exception handling left as an exercise for the reader
@@ -58,35 +53,39 @@ public class HistoricalDatas{
         
         return intArray;
 
-        //PrintWriter pw = new PrintWriter(new File("HistoricalData.csv"));
-        //StringBuilder sb = new StringBuilder();
-       // for(int i = 0; i<placementStrings.length; i++){
-         //   sb.append(placementStrings[i]);
-       // }
-      //  pw.write(sb.toString());
-       // pw.close();
+    }
+    public  int rowCounter(String fileName) {
+        String csvName = fileName;
+        int i = 0;//line count of csv
+        try {
+            File file = new File(csvName);
+            Scanner scanner = new Scanner(file);
+            while (scanner.hasNext()) {
+                    ++i;
+                    scanner.nextLine();
+            }
+        scanner.close();
+        return i;
+        }catch(FileNotFoundException e) {
+            return 0;
+        }
         
     }
 
-    public String[] loadData(){
-        String csvFile = "HistoricalData.csv";
-        String line = "";
-        String cvsSplitBy = ",";
-        String[] historicalData = {""};
-
+    public String[] loadData(String fileName) {
+        int i = rowCounter(fileName);
+        String csvFile = fileName;
+        String[] dataArray = new String[i];
+        
         try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-
-            while ((line = br.readLine()) != null) {
-
-                // use comma as separator
-                historicalData = line.split(cvsSplitBy);
-
+            for(int n = 0;n < i;n++){
+                String line = br.readLine();
+                    dataArray[n] = line; 
             }
-            
-        } catch (IOException e) {
-            e.printStackTrace();
+            return dataArray;
+        } catch (Exception e) {
+            return dataArray;
         }
-        return historicalData;
     }
 
     public void printOneRound(){
