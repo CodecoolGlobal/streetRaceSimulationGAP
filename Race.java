@@ -27,6 +27,6 @@ public class Race{
         car3.setOverall(car3.getPerformance() + car3.getDriverSkill());
         car4.setOverall(car4.getPerformance() + car4.getDriverSkill());
         car5.setOverall(car5.getPerformance() + car5.getDriverSkill());
-}
+    }
 
 }

@@ -4,11 +4,13 @@ import java.util.Date;
 public class Main{
     
     public static void main(String[] args){
+        Betting betting = new Betting();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter a number, where you'd like to go!");
         System.out.println("    1. Generate n rounds of the race!");
         System.out.println("    2. Show one round of the race!");
         System.out.println("    3. Show statistics!");
+        System.out.println("    4. Betting and generating the race!");
         int menuOptions = scanner.nextInt();
         scanner.nextLine();
         int rounds;
@@ -33,8 +35,10 @@ public class Main{
                     String oneRoundWinner = history.getFirstPlace();
                     System.out.println("\nThe winner of this round is: " + oneRoundWinner);
                     break;
-            case 3: System.err.println("Showing statistics!");
+            case 3: System.out.println("Showing statistics!");
                     //Printing useful stats!
+            case 4: System.out.println("Betting and generating the race:");
+                    betting.makeBet(1000);
         }
     }
     
