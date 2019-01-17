@@ -1,13 +1,13 @@
 import java.util.Random;
 
-public class Race{
+public class AnotherRace{
 
     Random rand = new Random();
-    Car car1 = new Car("Porsche 911", rand.nextInt(50) + 22, rand.nextInt(10) + 1, false,0);
-    Car car2 = new Car("BMW M5",rand.nextInt(50) + 23, rand.nextInt(10) + 1, false,0);
-    Car car3 = new Car("Aston Martin DB 11",rand.nextInt(50) + 25, rand.nextInt(10) + 1, false,0);
-    Car car4 = new Car("Volga",rand.nextInt(50) + 5, rand.nextInt(10) + 1, false,0);
-    Car car5 = new Car("Suzuki Swift Sport",rand.nextInt(50) + 10, rand.nextInt(10) + 1, false,0);
+    Car car1 = new Car("Porsche 911", rand.nextInt(50) + 23, rand.nextInt(10) + 1, false,0, 1.7);
+    Car car2 = new Car("BMW M5",rand.nextInt(50) + 25, rand.nextInt(10) + 1, false,0, 1.5);
+    Car car3 = new Car("Aston Martin DB 11",rand.nextInt(50) + 25, rand.nextInt(10) + 1, false,0, 1.5);
+    Car car4 = new Car("Volga",rand.nextInt(50) + 5, rand.nextInt(10) + 1, false,0, 5);
+    Car car5 = new Car("Suzuki Swift Sport",rand.nextInt(50) + 10, rand.nextInt(10) + 1, false,0, 4);
     
     {
     if(car1.getPerformance() >= 40 && car1.chanceToCrash() > 80){
@@ -28,5 +28,11 @@ public class Race{
         car4.setOverall(car4.getPerformance() + car4.getDriverSkill());
         car5.setOverall(car5.getPerformance() + car5.getDriverSkill());
     }
-
+    public void printOneRound(){
+        System.out.println(car1.toString());
+        System.out.println(car2.toString());
+        System.out.println(car3.toString());
+        System.out.println(car4.toString());
+        System.out.println(car5.toString());
+    }
 }

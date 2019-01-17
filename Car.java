@@ -7,6 +7,7 @@ public class Car{
     private int driverSkill;
     private boolean isCrashed;
     private int Overall;
+    private double odds;
 
     Random rand = new Random();
 
@@ -16,6 +17,15 @@ public class Car{
         this.driverSkill = driverSkill;
         this.isCrashed = isCrashed;
         this.Overall = Overall;
+    }
+
+    public Car(String name, int performance, int driverSkill, boolean isCrashed, int Overall, double odds){
+        this.name = name;
+        this.performance = performance;
+        this.driverSkill = driverSkill;
+        this.isCrashed = isCrashed;
+        this.Overall = Overall;
+        this.odds = odds;
     }
 
     public int chanceToCrash(){
@@ -49,6 +59,10 @@ public class Car{
    
     public void setOverall(int overall) {
         this.Overall = overall;
+    }
+
+    public double getOdds(){
+        return odds;
     }
 
 
