@@ -3,10 +3,10 @@ import java.util.Random;
 public class Race{
 
     Random rand = new Random();
-    Car car1 = new Car("Porsche 911", rand.nextInt(50) + 23, rand.nextInt(10) + 1, false,0);
-    Car car2 = new Car("BMW M5",rand.nextInt(50) + 25, rand.nextInt(10) + 1, false,0);
+    Car car1 = new Car("Porsche 911       ", rand.nextInt(50) + 23, rand.nextInt(10) + 1, false,0);
+    Car car2 = new Car("BMW M5            ",rand.nextInt(50) + 25, rand.nextInt(10) + 1, false,0);
     Car car3 = new Car("Aston Martin DB 11",rand.nextInt(50) + 25, rand.nextInt(10) + 1, false,0);
-    Car car4 = new Car("Volga",rand.nextInt(50) + 5, rand.nextInt(10) + 1, false,0);
+    Car car4 = new Car("Volga             ",rand.nextInt(50) + 5, rand.nextInt(10) + 1, false,0);
     Car car5 = new Car("Suzuki Swift Sport",rand.nextInt(50) + 10, rand.nextInt(10) + 1, false,0);
     
     {
