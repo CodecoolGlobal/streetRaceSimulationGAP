@@ -16,4 +16,11 @@ public class Logger{
 
         System.out.println(dateFormat.format(currentDate) + "\t" + type + "\t" + errorMessage);
     }
+    
+    public void timeDiffInSeconds(Date date1, Date date2){
+        double diffTime = date1.getTime()-date2.getTime();
+        double diffTimeInSeconds =  Math.abs(diffTime/1000);
+        
+        System.out.println("The task was finished in " + diffTimeInSeconds + " second(s).");
+    }
 }
